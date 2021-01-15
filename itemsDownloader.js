@@ -1,4 +1,9 @@
+downloadItems(`items-${document.title}.json`);
+
 function downloadItems(filename) {
+    const items = Array.from(document.getElementsByClassName("item")).map(item => itemToJson(item));
+    download(JSON.stringify(items, null, 4), filename, 'application/json');
+
     function itemToJson(p) {
         let cadLink = p.querySelector(".cad-link a");
         let cad;
@@ -37,9 +42,4 @@ function downloadItems(filename) {
             window.URL.revokeObjectURL(url);
         }, 0);
     }
-
-    const items = Array.from(document.getElementsByClassName("item")).map(item => itemToJson(item));
-    download(JSON.stringify(items, null, 4), filename, 'application/json');
 }
-
-downloadItems(`items-${document.title}.json`);
