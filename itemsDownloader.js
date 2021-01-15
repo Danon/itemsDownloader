@@ -5,7 +5,7 @@ function downloadItems(filename) {
         if (cadLink) {
             cad = {
                 itemNumber: cadLink.dataset.itemnumber,
-                iFrameUrl: cadLink.dataset.iframeurl,
+                iFrameUrl: cadLink.dataset.iframeurl.trim(),
             };
         } else {
             cad = {}
