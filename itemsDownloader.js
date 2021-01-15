@@ -16,7 +16,7 @@ function downloadItems(filename) {
             link: p.querySelector(".description .subtitle a").href,
             parameters: Array.from(p.querySelectorAll(".table tr")).map(tr => {
                 return {
-                    key: tr.querySelector("th").innerText,
+                    key: tr.querySelector("th").innerText.replace(":", ""),
                     value: tr.querySelector("td").innerText,
                 };
             }),
