@@ -42,4 +42,4 @@ function downloadItems(filename) {
     download(JSON.stringify(items, null, 4), filename, 'application/json');
 }
 
-downloadItems('items.json');
+downloadItems(`items-${document.title}.json`);
